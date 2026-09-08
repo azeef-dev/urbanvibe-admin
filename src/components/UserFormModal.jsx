@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { X } from "lucide-react";
+import CustomSelect from "./CustomSelect";
 
 export default function UserFormModal({ user, onSubmit, onClose }) {
     const [email, setEmail] = useState("");
