@@ -4,6 +4,7 @@ import { AuthProvider } from "./context/AuthContext";
 import ProtectedRoute from "./components/ProtectedRoute";
 import Layout from "./components/Layout";
 import Login from "./pages/Login";
+import Dashboard from "./pages/Dashboard";
 import ProductsPage from "./pages/ProductsPage";
 import UsersPage from "./pages/UsersPage";
 import OrdersPage from "./pages/OrdersPage";
@@ -22,7 +23,8 @@ export default function App() {
                      </ProtectedRoute>
                   }
                >
-                  <Route path="/" element={<Navigate to="/products" replace />} />
+                  <Route path="/" element={<Navigate to="/dashboard" replace />} />
+                  <Route path="/dashboard" element={<Dashboard />} />
                   <Route path="/products" element={<ProductsPage />} />
                   <Route path="/users" element={<UsersPage />} />
                   <Route path="/orders" element={<OrdersPage />} />
