@@ -1,7 +1,35 @@
-function App() {
- return( 
-    <h1>hello </h1>
- )
-}
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import { Toaster } from "react-hot-toast";
+import { AuthProvider } from "./context/AuthContext";
+import ProtectedRoute from "./components/ProtectedRoute";
+import Layout from "./components/Layout";
+import Login from "./pages/Login";
+import ProductsPage from "./pages/ProductsPage";
+import UsersPage from "./pages/UsersPage";
+import OrdersPage from "./pages/OrdersPage";
 
-export default App
+export default function App() {
+   return (
+      <AuthProvider>
+         <BrowserRouter>
+            <Toaster position="top-center" />
+            <Routes>
+               <Route path="/login" element={<Login />} />
+               <Route
+                  element={
+                     <ProtectedRoute>
+                        <Layout />
+                     </ProtectedRoute>
+                  }
+               >
+                  <Route path="/" element={<Navigate to="/products" replace />} />
+                  <Route path="/products" element={<ProductsPage />} />
+                  <Route path="/users" element={<UsersPage />} />
+                  <Route path="/orders" element={<OrdersPage />} />
+               </Route>
+               <Route path="*" element={<Navigate to="/" replace />} />
+            </Routes>
+         </BrowserRouter>
+      </AuthProvider>
+   );
+}
