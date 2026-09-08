@@ -58,14 +58,14 @@ export default function UserFormModal({ user, onSubmit, onClose }) {
                         placeholder={user ? "New password (leave blank to keep)" : "Password"}
                         className="h-10 px-4 rounded-lg bg-[#232135] text-white placeholder-slate-500 text-sm outline-none border border-transparent focus:border-blue-500"
                     />
-                    <select
+                    <CustomSelect
                         value={role}
-                        onChange={(e) => setRole(e.target.value)}
-                        className="h-10 px-4 rounded-lg bg-[#232135] text-white text-sm outline-none border border-transparent focus:border-blue-500 cursor-pointer"
-                    >
-                        <option value="user">User</option>
-                        <option value="admin">Admin</option>
-                    </select>
+                        onChange={setRole}
+                        options={[
+                            { value: "user", label: "User" },
+                            { value: "admin", label: "Admin" },
+                        ]}
+                    />
 
                     <button type="submit" disabled={loading} className="h-11 rounded-xl bg-blue-500 hover:bg-blue-600 text-white text-sm font-semibold cursor-pointer disabled:opacity-60 mt-2">
                         {loading ? "Saving..." : user ? "Update User" : "Add User"}
