@@ -5,7 +5,12 @@ import api from "../lib/api";
 import CustomSelect from "../components/CustomSelect";
 import { formatPrice } from "../lib/format";
 
-const STATUS_OPTIONS = ["pending", "processing", "shipped", "delivered"];
+const STATUS_OPTIONS = [
+    { value: "pending", label: "Pending" },
+    { value: "processing", label: "Processing" },
+    { value: "shipped", label: "Shipped" },
+    { value: "delivered", label: "Delivered" },
+];
 
 export default function OrdersPage() {
     const [orders, setOrders] = useState([]);
