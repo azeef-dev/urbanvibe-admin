@@ -64,7 +64,7 @@ export default function OrdersPage() {
             </div>
 
             <div className="bg-[#1c1a2b] border border-white/5 rounded-2xl overflow-hidden overflow-x-auto">
-                <table className="w-full text-sm min-w-[560px]">
+                <table className="w-full text-sm min-w-140">
                     <thead className="text-slate-400 text-left text-xs uppercase tracking-wide">
                         <tr>
                             <th className="p-4">Order ID</th>
@@ -80,7 +80,7 @@ export default function OrdersPage() {
                             <tr><td colSpan={4} className="p-6 text-center text-slate-500">{search ? "No orders match your search" : "No orders yet"}</td></tr>
                         ) : (
                             filtered.map((o) => (
-                                <tr key={o._id} className="hover:bg-white/[0.03] transition-colors">
+                                <tr key={o._id} className="hover:bg-white/3 transition-colors">
                                     <td className="p-4 font-medium text-white">#{o.orderId}</td>
                                     <td className="p-4">
                                         <p className="text-white">{o.name}</p>
