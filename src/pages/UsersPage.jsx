@@ -92,7 +92,7 @@ export default function UsersPage() {
             </div>
 
             <div className="bg-[#1c1a2b] border border-white/5 rounded-2xl overflow-hidden overflow-x-auto">
-                <table className="w-full text-sm min-w-[560px]">
+                <table className="w-full text-sm min-w-140">
                     <thead className="text-slate-400 text-left text-xs uppercase tracking-wide">
                         <tr>
                             <th className="p-4">Email</th>
@@ -108,7 +108,7 @@ export default function UsersPage() {
                             <tr><td colSpan={4} className="p-6 text-center text-slate-500">{search ? "No users match your search" : "No users yet"}</td></tr>
                         ) : (
                             filtered.map((u) => (
-                                <tr key={u._id} className="hover:bg-white/[0.03] transition-colors">
+                                <tr key={u._id} className="hover:bg-white/3 transition-colors">
                                     <td className="p-4 font-medium text-white">{u.email}</td>
                                     <td className="p-4"><StatusBadge value={u.role} /></td>
                                     <td className="p-4 text-slate-400">{u.createdAt ? new Date(u.createdAt).toLocaleDateString() : "—"}</td>
