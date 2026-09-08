@@ -1,5 +1,6 @@
 import { useState, useContext } from "react";
 import { NavLink, Outlet, useNavigate } from "react-router-dom";
+import { LayoutDashboard, Package, Users, ShoppingBag, LogOut, ChevronLeft, ChevronRight, Menu, X } from "lucide-react";
 import { Package, Users, ShoppingBag, LogOut, ChevronLeft, ChevronRight, Menu, X } from "lucide-react";
 import { AuthContext } from "../context/AuthContext";
 
