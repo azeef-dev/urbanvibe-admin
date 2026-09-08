@@ -5,7 +5,12 @@ import { uploadToCloudinary } from "../lib/uploadToCloudinary";
 import { parseDiscountNumber, formatDiscount } from "../lib/format";
 import CustomSelect from "./CustomSelect";
 
-const CATEGORY_OPTIONS = ["new-arrivals", "top-selling", "featured", "you-might-like"];
+const CATEGORY_OPTIONS = [
+    { value: "new-arrivals", label: "New Arrivals" },
+    { value: "top-selling", label: "Top Selling" },
+    { value: "featured", label: "Featured" },
+    { value: "you-might-like", label: "You Might Also Like" },
+];
 
 const emptyForm = {
     name: "",
