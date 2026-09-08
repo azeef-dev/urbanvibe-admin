@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Search } from "lucide-react";
 import toast from "react-hot-toast";
 import api from "../lib/api";
+import CustomSelect from "../components/CustomSelect";
 import { formatPrice } from "../lib/format";
 
 const STATUS_OPTIONS = ["pending", "processing", "shipped", "delivered"];
