@@ -94,15 +94,12 @@ export default function OrdersPage() {
                                     </td>
                                     <td className="p-4 text-white font-medium">${formatPrice(o.totalAmount)}</td>
                                     <td className="p-4">
-                                        <select
+                                        <CustomSelect
                                             value={o.status || "pending"}
-                                            onChange={(e) => handleStatusChange(o._id, e.target.value)}
-                                            className="h-9 px-3 rounded-lg bg-[#232135] text-white text-xs outline-none border border-transparent focus:border-blue-500 cursor-pointer"
-                                        >
-                                            {STATUS_OPTIONS.map((s) => (
-                                                <option key={s} value={s}>{s}</option>
-                                            ))}
-                                        </select>
+                                            onChange={(val) => handleStatusChange(o._id, val)}
+                                            options={STATUS_OPTIONS}
+                                            className="w-36"
+                                        />
                                     </td>
                                 </tr>
                             ))
