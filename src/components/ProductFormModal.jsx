@@ -107,11 +107,11 @@ export default function ProductFormModal({ product, onSubmit, onClose }) {
 
                     <input name="name" value={form.name} onChange={handleChange} placeholder="Product name" required className="h-10 px-4 rounded-lg bg-[#232135] text-white placeholder-slate-500 text-sm outline-none border border-transparent focus:border-blue-500" />
 
-                    <select name="category" value={form.category} onChange={handleChange} className="h-10 px-4 rounded-lg bg-[#232135] text-white text-sm outline-none border border-transparent focus:border-blue-500 cursor-pointer">
-                        {CATEGORY_OPTIONS.map((c) => (
-                            <option key={c} value={c}>{c}</option>
-                        ))}
-                    </select>
+                    <CustomSelect
+                        value={form.category}
+                        onChange={(val) => setForm({ ...form, category: val })}
+                        options={CATEGORY_OPTIONS}
+                    />
 
                     <div className="grid grid-cols-2 gap-3">
                         <input name="price" type="number" value={form.price} onChange={handleChange} placeholder="Price" required className="h-10 px-4 rounded-lg bg-[#232135] text-white placeholder-slate-500 text-sm outline-none border border-transparent focus:border-blue-500" />
