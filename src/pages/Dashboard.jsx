@@ -73,7 +73,7 @@ export default function Dashboard() {
 
             {/* Big highlight cards */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <div className="rounded-2xl p-6 bg-gradient-to-br from-violet-600 to-purple-700 flex items-center justify-between">
+                <div className="rounded-2xl p-6 bg-linear-to-br from-violet-600 to-purple-700 flex items-center justify-between">
                     <div>
                         <p className="text-white/80 text-sm font-medium">Total Revenue</p>
                         <p className="text-white text-3xl font-bold mt-1">${formatPrice(totalRevenue)}</p>
@@ -83,7 +83,7 @@ export default function Dashboard() {
                         <DollarSign className="text-white" size={26} />
                     </div>
                 </div>
-                <div className="rounded-2xl p-6 bg-gradient-to-br from-blue-500 to-cyan-600 flex items-center justify-between">
+                <div className="rounded-2xl p-6 bg-linear-to-br from-blue-500 to-cyan-600 flex items-center justify-between">
                     <div>
                         <p className="text-white/80 text-sm font-medium">Orders Received</p>
                         <p className="text-white text-3xl font-bold mt-1">{stats?.totalOrders ?? 0}</p>
@@ -158,7 +158,7 @@ export default function Dashboard() {
             {/* Recent orders */}
             <div className="bg-[#1c1a2b] border border-white/5 rounded-2xl overflow-hidden overflow-x-auto">
                 <h3 className="font-bold text-white p-5 pb-0">Recent Orders</h3>
-                <table className="w-full text-sm min-w-[520px] mt-4">
+                <table className="w-full text-sm min-w-130 mt-4">
                     <thead className="text-slate-400 text-left text-xs uppercase tracking-wide">
                         <tr>
                             <th className="p-4">Order ID</th>
@@ -172,7 +172,7 @@ export default function Dashboard() {
                             <tr><td colSpan={4} className="p-6 text-center text-slate-500">No orders yet</td></tr>
                         ) : (
                             recentOrders.map((o) => (
-                                <tr key={o._id} className="hover:bg-white/[0.03] transition-colors">
+                                <tr key={o._id} className="hover:bg-white/3 transition-colors">
                                     <td className="p-4 font-medium text-white">#{o.orderId}</td>
                                     <td className="p-4">
                                         <p className="text-white">{o.name}</p>
