@@ -92,7 +92,7 @@ export default function ProductsPage() {
             </div>
 
             <div className="bg-[#1c1a2b] border border-white/5 rounded-2xl overflow-hidden overflow-x-auto">
-                <table className="w-full text-sm min-w-[640px]">
+                <table className="w-full text-sm min-w-160">
                     <thead className="text-slate-400 text-left text-xs uppercase tracking-wide">
                         <tr>
                             <th className="p-4">Product</th>
@@ -109,7 +109,7 @@ export default function ProductsPage() {
                             <tr><td colSpan={5} className="p-6 text-center text-slate-500">{search ? "No products match your search" : "No products yet"}</td></tr>
                         ) : (
                             filtered.map((p) => (
-                                <tr key={p.id} className="hover:bg-white/[0.03] transition-colors">
+                                <tr key={p.id} className="hover:bg-white/3 transition-colors">
                                     <td className="p-4">
                                         <div className="flex items-center gap-3">
                                             <img src={p.image} alt={p.name} className="w-10 h-10 rounded-lg object-cover bg-[#232135] shrink-0" />
