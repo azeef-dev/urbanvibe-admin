@@ -3,6 +3,7 @@ import { X } from "lucide-react";
 import toast from "react-hot-toast";
 import { uploadToCloudinary } from "../lib/uploadToCloudinary";
 import { parseDiscountNumber, formatDiscount } from "../lib/format";
+import CustomSelect from "./CustomSelect";
 
 const CATEGORY_OPTIONS = ["new-arrivals", "top-selling", "featured", "you-might-like"];
 
