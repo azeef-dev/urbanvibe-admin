@@ -5,6 +5,7 @@ import { Package, Users, ShoppingBag, LogOut, ChevronLeft, ChevronRight, Menu, X
 import { AuthContext } from "../context/AuthContext";
 
 const navItems = [
+    { to: "/dashboard", label: "Dashboard", icon: LayoutDashboard },
     { to: "/products", label: "Products", icon: Package },
     { to: "/users", label: "Users", icon: Users },
     { to: "/orders", label: "Orders", icon: ShoppingBag },
